@@ -1,0 +1,20 @@
+[package]
+name = "cart"
+version = "1.0.0"
+edition = "2021"
+authors = ["Sander in 't Veld <sanderintveld@hotmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+fastrand = "1.6"
+
+[profile.release]
+opt-level = "z"
+lto = true
+panic = "abort"
+strip = true
+overflow-checks = false
